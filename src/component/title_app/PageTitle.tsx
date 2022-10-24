@@ -1,10 +1,14 @@
 import React from 'react';
 import s from './AppTitle.module.css'
 
-export const AppTitle = () => {
+export type PropsPageTitle ={
+  title:string
+}
+
+export const PageTitle = (props:PropsPageTitle) => {
   return (
     <div className={s.container}>
-      <h3 className={s.h3}>This is a menu</h3>
+      <h1 className={s.h3}>{props.title}</h1>
       <>This is s component</>
     </div>
   );
