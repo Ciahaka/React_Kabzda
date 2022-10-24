@@ -1,17 +1,21 @@
 import React from 'react';
-import './App.css';
-import {Accordion} from './component/accordion/Accordion';
+import s from './App.module.css';
+import {Accordion, PropsAccordionType} from './component/accordion/Accordion';
 import {Rating} from './component/rating/Rating';
-import {AppTitle} from './component/title_app/AppTitle';
+import {PageTitle} from './component/title_app/PageTitle';
 import {Stars} from './component/star/Stars';
+import {AccordionTitle} from './component/accordion/accordion_title/AccordionTitle';
 
 function App() {
   return (
     <div className="App">
+      <p className={s.img}><img  src="https://snipp.ru/uploads/view/d8c58b07e849fcdd229dcdebc97cdaba.png" alt="Centered Content" width={200}/></p>
+      <PageTitle title={'My Duolingo'}/>
+      <PageTitle title={'Interesting meeting'}/>
       <Stars/>
       <Stars/>
-      <AppTitle/>
-      <Accordion/>
+      <Accordion title={'Title for Accordion'}/>
+      <Accordion title={'I am hungry!'}/>
       <Rating value={0}/>
       <Rating value={1}/>
       <Rating value={2}/>
