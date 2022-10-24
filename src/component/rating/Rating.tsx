@@ -6,9 +6,6 @@ export const Rating = () => {
     <div className={s.container}>
       <div>PUK</div>
       <div>PUK</div>
-      <div>PUK</div>
-      <div>PUK</div>
-      <div>PUK</div>
     </div>
   );
 }
