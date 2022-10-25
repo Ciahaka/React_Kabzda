@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './App.module.css';
-import {Accordion, PropsAccordionType} from './component/accordion/Accordion';
+import {Accordion, Accordion_1, PropsAccordionType} from './component/accordion/Accordion';
 import {Rating} from './component/rating/Rating';
 import {PageTitle} from './component/title_app/PageTitle';
 import {Stars} from './component/star/Stars';
@@ -16,6 +16,7 @@ function App() {
       <Stars/>
       <Accordion title={'Title for Accordion'} collapsed={true}/>
       <Accordion title={'I am hungry!'} collapsed={false}/>
+      <Accordion_1 title={'Write me a component'} collapsed={true}/>
       <Rating value={0}/>
       <Rating value={1}/>
       <Rating value={2}/>
