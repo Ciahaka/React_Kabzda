@@ -7,54 +7,16 @@ export type TypeRating ={
 }
 
 export const Rating = (props:TypeRating) => {
-  if (props.value===1) {
-    return (
-      <div className={s.container}>
-        <Puk selected={true}/>
-        <Puk selected={false}/>
-        <Puk selected={false}/>
-        <Puk selected={false}/>
-      </div>
-    );
-  }
-  if (props.value===2) {
-    return (
-      <div className={s.container}>
-        <Puk selected={true}/>
-        <Puk selected={true}/>
-        <Puk selected={false}/>
-        <Puk selected={false}/>
-      </div>
-    );
-  }
-  if (props.value===3) {
-    return (
-      <div className={s.container}>
-        <Puk selected={true}/>
-        <Puk selected={true}/>
-        <Puk selected={true}/>
-        <Puk selected={false}/>
-      </div>
-    );
-  }
-  if (props.value===4){
-    return (
-      <div className={s.container}>
-        <Puk selected={true}/>
-        <Puk selected={true}/>
-        <Puk selected={true}/>
-        <Puk selected={true}/>
-      </div>
-    );
-  }
   return (
-    <div className={s.container}>
-      <Puk selected={false}/>
-      <Puk selected={false}/>
-      <Puk selected={false}/>
-      <Puk selected={false}/>
-    </div>
-  );
-}
+      <div className={s.container}>
+        <Puk selected={props.value>0}/>
+        <Puk selected={props.value>1}/>
+        <Puk selected={props.value>2}/>
+        <Puk selected={props.value>3}/>
+      </div>
+    );
+  }
+
+
 
 
