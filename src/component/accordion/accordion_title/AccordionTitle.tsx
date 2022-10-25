@@ -8,7 +8,7 @@ export type PropsAccordionTitle = {
 export const AccordionTitle = (props:PropsAccordionTitle) => {
   return (
     <div className={s.container}>
-      <h2>{props.title}</h2>
+      <h2 className={s.colorText}>{props.title}</h2>
     </div>
   );
 }
