@@ -14,8 +14,8 @@ function App() {
       <PageTitle title={'Interesting meeting'}/>
       <Stars/>
       <Stars/>
-      <Accordion title={'Title for Accordion'}/>
-      <Accordion title={'I am hungry!'}/>
+      <Accordion title={'Title for Accordion'} collapsed={true}/>
+      <Accordion title={'I am hungry!'} collapsed={false}/>
       <Rating value={0}/>
       <Rating value={1}/>
       <Rating value={2}/>
