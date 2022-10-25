@@ -8,6 +8,15 @@ export type PropsAccordionType = {
   collapsed: boolean
 }
 
+export const Accordion_1 = (props: PropsAccordionType) => {
+  return (
+    <div className={s.container}>
+      <AccordionTitle title={props.title}/>
+      {!props.collapsed && <AccordionBody/>}
+    </div>
+  );
+
+}
 export const Accordion = (props: PropsAccordionType) => {
   if (props.collapsed) {
     return (
