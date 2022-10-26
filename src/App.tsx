@@ -5,11 +5,13 @@ import {Rating} from './component/rating/Rating';
 import {PageTitle} from './component/title_app/PageTitle';
 import {Stars} from './component/star/Stars';
 import {AccordionTitle} from './component/accordion/accordion_title/AccordionTitle';
+import {OnOf, OnOf_1} from './component/on_of/OnOf';
 
 function App() {
   return (
     <div className="App">
-      <p className={s.img}><img  src="https://snipp.ru/uploads/view/d8c58b07e849fcdd229dcdebc97cdaba.png" alt="Centered Content" width={200}/></p>
+      <p className={s.img}><img src="https://snipp.ru/uploads/view/d8c58b07e849fcdd229dcdebc97cdaba.png"
+                                alt="Centered Content" width={200}/></p>
       <PageTitle title={'My Duolingo'}/>
       <PageTitle title={'Interesting meeting'}/>
       <Stars/>
@@ -22,6 +24,11 @@ function App() {
       <Rating value={2}/>
       <Rating value={3}/>
       <Rating value={4}/>
+      <OnOf_1 isDone={false}/>
+      <OnOf_1 isDone={true}/>
+      <OnOf isDone={true}/>
+      <OnOf isDone={false}/>
+
 
     </div>
   );
