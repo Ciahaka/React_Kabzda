@@ -9,9 +9,9 @@ export type PropsOnOfType = {
 export const OnOf_1 = (props: PropsOnOfType) => {
   return (
     <div className={s.container}>
-      <div className={props.isDone ? s.on || s.normal: s.of}>on</div>
-      {/*<div className={props.isDone ? s.on : s.of }>of</div>*/}
-      <div className={props.isDone ? s.roundOn  : s.roundOf}></div>
+      <div className={props.isDone ? s.on || s.of : s.normal}>on</div>
+      <div className={props.isDone ? s.normal || s.on : s.of}>of</div>
+      <div className={props.isDone ? s.roundOn : s.roundOf}></div>
     </div>
 
   )
