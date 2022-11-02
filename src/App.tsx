@@ -5,7 +5,7 @@ import {Rating} from './component/rating/Rating';
 import {PageTitle} from './component/title_app/PageTitle';
 import {Stars} from './component/star/Stars';
 import {AccordionTitle} from './component/accordion/accordion_title/AccordionTitle';
-import {OnOf, OnOf_1} from './component/on_of/OnOf';
+import {ClickUse, OnOf, OnOf_1} from './component/on_of/OnOf';
 
 function App() {
   return (
@@ -24,10 +24,11 @@ function App() {
       <Rating value={2}/>
       <Rating value={3}/>
       <Rating value={4}/>
-      <OnOf_1 isDone={false}/>
+      <OnOf_1 isDone={true}/>
       <OnOf_1 isDone={true}/>
       <OnOf isDone={true}/>
       <OnOf isDone={false}/>
+        <ClickUse/>
 
 
     </div>
