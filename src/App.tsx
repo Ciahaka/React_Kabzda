@@ -6,6 +6,8 @@ import {PageTitle} from './component/title_app/PageTitle';
 import {Stars} from './component/star/Stars';
 import {AccordionTitle} from './component/accordion/accordion_title/AccordionTitle';
 import {ClickUse, OnOf, OnOf_1} from './component/on_of/OnOf';
+import {UnControlledAccordion} from './component/accordion/accordion with use/UnControlledAccordion';
+import {UnControlledRating} from './component/rating/un controlled rating/UnControlledRating';
 
 function App() {
   return (
@@ -28,7 +30,13 @@ function App() {
       <OnOf_1 isDone={true}/>
       <OnOf isDone={true}/>
       <OnOf isDone={false}/>
-        <ClickUse/>
+      <ClickUse/>
+      <UnControlledAccordion title={'I am very hungry!'}/>
+      <UnControlledRating/>
+      <UnControlledRating/>
+      <UnControlledRating/>
+      <UnControlledRating/>
+
 
 
     </div>
