@@ -1,0 +1,15 @@
+.container {
+    margin: 5px 300px 5px 300px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    background-color: #f3718f;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+
+}
+
+.span{
+    margin: 3px;
+}
