@@ -8,10 +8,7 @@ import s from './UnControlledRating.module.css'
 
 export const UnControlledRating = () => {
 
-
-
   let [value, setValue] = useState(0)
-
   return (
     <div className={s.container}>
       <Puk selected={value > 0}/>
@@ -32,9 +29,7 @@ export type PukType = {
 
 const Puk = (props:PukType) => {
 
-
-
-  if (props.selected === true) {
+  if (props.selected) {
     return <span><b>Puk</b> </span>;
   } else {
     return <span>Puk</span>;

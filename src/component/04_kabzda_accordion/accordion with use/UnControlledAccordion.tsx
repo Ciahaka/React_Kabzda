@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import s from './UnControlledAccordion.module.css'
-import of from '../../on_of/OnOf.module.css'
-import on from '../../on_of/OnOf.module.css'
+import of from '../../05_kabzda_on_of/OnOf.module.css'
+import on from '../../05_kabzda_on_of/OnOf.module.css'
 
 export type PropsAccordionType = {
   title: string
