@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './App.module.css';
 import {Accordion, Accordion_1, PropsAccordionType} from './component/04_kabzda_accordion/Accordion';
 import {Rating} from './component/03_kabzda_rating/Rating';
@@ -11,10 +11,16 @@ import {UnControlledRating} from './component/03_kabzda_rating/un controlled rat
 import {CallbackRating} from './component/08-kabzda_callback/CallbackRating';
 import {CallbackAccordion} from './component/08-kabzda_callback/callback accordion/CallbackAccordion';
 import {
-  CallbackControlledRating
+  CallbackControlledRating,
+  RatingValueType
 } from './component/08-kabzda_callback/callback controled rating/CallbackControledRating';
+import {
+  CallbackUnControlledRating
+} from './component/08-kabzda_callback/calback uncontrolled rating/CallbackUnControledRating';
 
 function App() {
+
+  let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
 
 
   return (
@@ -44,8 +50,11 @@ function App() {
       <UnControlledRating/>
       <UnControlledRating/>
       <CallbackRating/>
+      <CallbackRating/>
+      <CallbackRating/>
       <CallbackAccordion title={'Callback'}/>
-      <CallbackControlledRating value={2}/>
+      <CallbackControlledRating value={ratingValue} onClick={setRatingValue}/>
+      <CallbackUnControlledRating/>
     </div>
   );
 }
