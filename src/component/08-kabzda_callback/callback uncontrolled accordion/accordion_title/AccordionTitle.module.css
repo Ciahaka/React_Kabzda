@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+ .colorText {
+     color: #dee8de;
+     text-shadow: 2px 2px  2px grey;
+ }
+
+ .h3{
+     color: #dee8de;
+     text-shadow: 2px 2px  2px grey;
+     margin: 5px 5px 5px 5px;
+ }

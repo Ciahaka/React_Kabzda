@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ul {
+    list-style-type: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: large;
+    font-style: italic;
+    position: relative;
+    right: 30px;
+}
