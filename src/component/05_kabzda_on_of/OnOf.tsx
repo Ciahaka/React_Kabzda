@@ -4,6 +4,7 @@ import s from './OnOf.module.css'
 
 export type PropsOnOfType = {
   isDone: boolean
+
 }
 
 export const OnOf_1 = (props: PropsOnOfType) => {
@@ -18,24 +19,30 @@ export const OnOf_1 = (props: PropsOnOfType) => {
 
 }
 
-export const ClickUse = () => {
+type ClickPropsType={
+  onChange: (isDone: boolean) => void
+}
+
+export const ClickUse = (props:ClickPropsType) => {
 
   let [isDone, setIsDone] = useState(false)
 
   return (
 
-      <div className={s.container}>
+    <div className={s.container}>
 
-        <div className={isDone ? s.on || s.of : s.normal} onClick={() => {
-          setIsDone(true)
-        }}>ClickUse ON
-        </div>
-        <div className={isDone ? s.normal || s.on : s.of} onClick={() => {
-          setIsDone(false)
-        }}>ClickUse OF
-        </div>
-        <div className={isDone ? s.roundOn : s.roundOf}></div>
+      <div className={isDone ? s.on || s.of : s.normal} onClick={() => {
+        setIsDone(true)
+        props.onChange(true)
+      }}>ClickUse ON
       </div>
+      <div className={isDone ? s.normal || s.on : s.of} onClick={() => {
+        setIsDone(false)
+        props.onChange(false)
+      }}>ClickUse OF
+      </div>
+      <div className={isDone ? s.roundOn : s.roundOf}></div>
+    </div>
 
   )
 
