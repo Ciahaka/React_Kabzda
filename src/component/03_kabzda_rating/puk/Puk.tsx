@@ -5,7 +5,7 @@ export type PukType = {
 }
 
 export const Puk = (props:PukType) => {
- if (props.selected===true){
+ if (props.selected){
    return <span><b>Puk</b> </span>;
  } else {
    return <span>Puk</span>;
