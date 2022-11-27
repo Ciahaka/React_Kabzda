@@ -29,7 +29,7 @@ export type PropsAccordionTitle = {
   onClick:()=>void
 }
 
-const AccordionTitle = (props:PropsAccordionTitle) => {
+export const AccordionTitle = (props:PropsAccordionTitle) => {
   return (
     <div className={s.title}>
       <h2 className={s.colorText} onClick={()=>{props.onClick()}}>{props.title}</h2>
@@ -37,7 +37,7 @@ const AccordionTitle = (props:PropsAccordionTitle) => {
   );
 }
 
-const AccordionBody = () => {
+export const AccordionBody = () => {
   return (
     <div className={s.container}>
 
