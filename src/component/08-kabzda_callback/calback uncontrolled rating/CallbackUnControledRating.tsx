@@ -15,7 +15,9 @@ export const CallbackUnControlledRating = () => {
     </div>
 
   )
-}; type SpiTType = {
+};
+
+  type SpiTType = {
   selected: boolean
   setValue: () => void
 }
