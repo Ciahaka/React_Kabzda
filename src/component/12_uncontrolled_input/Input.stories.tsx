@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
 import {UncontrolledInput} from './UncontrolledInput';
 import {action} from '@storybook/addon-actions';
@@ -24,12 +24,28 @@ export const useUncontrolledInputTrackedValue = () => {
     }
     }/> - {value}  </>
 }
-export const useUncontrolledInputWithButton = () => {
+export const useUncontrolledInputAbusedReact = () => {
   const [value, setValue] = useState('')
   return <>
-    <input/>
-    <button onClick={() => {
-      setValue('Alert')
+    <input id={'inputID'}/>
+    <button onClick={(event) => {
+      const el = document.getElementById('inputID') as HTMLInputElement
+      setValue(el.value)
+    }}> Click
+    </button>
+    Actual Value: - {value}
+  </>
+}
+
+export const useUncontrolledInputWithRef = () => {
+  const [value, setValue] = useState('')
+  const inputRef = useRef<HTMLInputElement>(null)
+  return <>
+    <input ref={inputRef}/>
+    <button onClick={(event) => {
+
+      const el = inputRef.current as HTMLInputElement
+      setValue(el.value)
     }}> Click
     </button>
     Actual Value: - {value}

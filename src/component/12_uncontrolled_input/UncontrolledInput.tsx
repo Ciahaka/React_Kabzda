@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Container, Paper, TextField, Typography} from '@mui/material';
+import {Button, Container, Paper, TextField, Typography} from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2';
 
 export type InputPropsType = {
@@ -9,6 +9,8 @@ export type InputPropsType = {
 
 export const UncontrolledInput = (props: InputPropsType) => {
   const [value, setValue] = useState('')
+  const [value_1, setValue_1] = useState('')
+
   return (
     <div>
       <Container maxWidth={'xs'}>
@@ -28,13 +30,13 @@ export const UncontrolledInput = (props: InputPropsType) => {
               }
               }/> - {value}  </>
             <>
-              <TextField label="Enter a value" variant="standard"/>
-              <button onClick={()=>{
-                setValue('Alert')
-              }}>
-                Click
-              </button>
-              Actual Value: - {value}  </>
+              <TextField id={'inputID'} label="Enter a value" variant="standard"/>
+              <Button style={{margin:'5px'}} variant="contained" color="success" onClick={(event) => {
+                const el = document.getElementById('inputID') as HTMLInputElement
+                setValue_1(el.value)
+              }}> Click
+              </Button>
+              Actual Value: - {value_1}  </>
 
           </Grid2>
         </Paper>
