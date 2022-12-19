@@ -42,7 +42,7 @@ export const useUncontrolledInputWithRef = () => {
   const inputRef = useRef<HTMLInputElement>(null)
   return <>
     <input ref={inputRef}/>
-    <button onClick={(event) => {
+    <button onClick={() => {
 
       const el = inputRef.current as HTMLInputElement
       setValue(el.value)
