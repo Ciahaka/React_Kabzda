@@ -7,22 +7,23 @@ import {Stars} from './component/01_kabzda_star/Stars';
 import {ClickUse, OnOf, OnOf_1} from './component/05_kabzda_on_of/OnOf';
 import {UnControlledAccordion} from './component/04_kabzda_accordion/accordion with use/UnControlledAccordion';
 import {UnControlledRating} from './component/03_kabzda_rating/un controlled rating/UnControlledRating';
-import {CallbackRating} from './component/08-kabzda_callback/CallbackRating';
-import {CallbackAccordion} from './component/08-kabzda_callback/callback accordion/CallbackAccordion';
+import {CallbackRating} from './component/08_kabzda_callback/CallbackRating';
+import {CallbackAccordion} from './component/08_kabzda_callback/callback accordion/CallbackAccordion';
 import {
   CallbackControlledRating,
   RatingValueType
-} from './component/08-kabzda_callback/callback controled rating/CallbackControledRating';
+} from './component/08_kabzda_callback/callback controled rating/CallbackControledRating';
 import {
   CallbackUnControlledRating
-} from './component/08-kabzda_callback/calback uncontrolled rating/CallbackUnControledRating';
+} from './component/08_kabzda_callback/calback uncontrolled rating/CallbackUnControledRating';
 import {
   CallbackUnControlledAccordion
-} from './component/08-kabzda_callback/callback uncontrolled accordion/CallbackUnControlledAccordion';
+} from './component/08_kabzda_callback/callback uncontrolled accordion/CallbackUnControlledAccordion';
 import {
   onClickType,
   UnControlledOnOffCallback
-} from './component/08-kabzda_callback/uncontrolled on_of callback/UnControlledOnOffCallback';
+} from './component/08_kabzda_callback/uncontrolled on_of callback/UnControlledOnOffCallback';
+import {UncontrolledInput} from './component/12_uncontrolled_input/UncontrolledInput';
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
       <CallbackUnControlledRating/>
       <CallbackUnControlledAccordion title={'Я неуправляемый баян из ада!'} pip={'Жми сюда!--> 0'} collapsed={collapsed} onChange={()=>setCollapsed(!collapsed)}/>
       <UnControlledOnOffCallback click={isDone} onClick={(click)=>setIsDone(click)}/>
+      <UncontrolledInput title={'Uncontrolled Input'} value={'Я под контролeм!'} />
     </div>
   );
 }
