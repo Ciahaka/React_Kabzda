@@ -24,6 +24,7 @@ import {
   UnControlledOnOffCallback
 } from './component/08_kabzda_callback/uncontrolled on_of callback/UnControlledOnOffCallback';
 import {UncontrolledInput} from './component/12_uncontrolled_input/UncontrolledInput';
+import {ControlledInput} from './component/13_controlled_input-checkbox-select/ControlledInput';
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
       <CallbackUnControlledAccordion title={'Я неуправляемый баян из ада!'} pip={'Жми сюда!--> 0'} collapsed={collapsed} onChange={()=>setCollapsed(!collapsed)}/>
       <UnControlledOnOffCallback click={isDone} onClick={(click)=>setIsDone(click)}/>
       <UncontrolledInput title={'Uncontrolled Input'} value={'Я под контролeм!'} />
+      <ControlledInput title={'Controlled Input'}/>
     </div>
   );
 }
