@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useState} from 'react';
 import Grid2 from '@mui/material/Unstable_Grid2';
-import {Checkbox, Container, Paper, TextField, Typography, Select} from '@mui/material';
+import {Checkbox, Container, Paper, Select, TextField, Typography} from '@mui/material';
 
 
 
@@ -10,10 +10,13 @@ export type InputPropsType = {
 }
 
 export const ControlledInput = (props: InputPropsType) => {
+
   const [valueP, setValueP] = useState('')
   const OnChangeHandler = (event:ChangeEvent<HTMLInputElement>) =>{setValueP(event.currentTarget.value)}
+
   const [valueCh, setValueCh] = useState(true)
   const checkboxHandler = (event:ChangeEvent<HTMLInputElement>) =>{setValueCh(event.currentTarget.checked)}
+
   const [valueS, setValueS] = useState<string | undefined>('15')
   const selectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
     setValueS(event.currentTarget.value)
@@ -21,11 +24,11 @@ export const ControlledInput = (props: InputPropsType) => {
 
   return (
     <div>
-      <Container maxWidth={'xs'}>
-        <Paper elevation={5} style={{padding: '10px', margin:'5px'}}>
-          <Grid2 container spacing={2} direction={'column'} alignItems={'center'} style={{padding: '10px'}}>
+      <Container maxWidth={'xs'}  >
+        <Paper elevation={5} style={{padding: '10px', margin:'5px'}} >
+          <Grid2 container spacing={2} direction={'column'} alignItems={'center'} style={{padding: '10px'}} >
 
-            <Typography variant="h6" component="div" sx={{flexGrow: 1}} color={'brown'}>
+            <Typography variant="h6" component="div" sx={{flexGrow: 1}} color={'blueviolet'}>
               {props.title}
             </Typography>
             <TextField label="Input with useState" variant="standard" value={valueP} onChange={OnChangeHandler}/>
