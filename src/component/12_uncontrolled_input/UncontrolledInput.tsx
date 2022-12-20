@@ -28,8 +28,8 @@ export const UncontrolledInput = (props: InputPropsType) => {
 
   return (
     <div>
-      <Container maxWidth={'xs'}>
-        <Paper elevation={5} style={{padding: '3px'}}>
+      <Container maxWidth={'xs'} >
+        <Paper elevation={5} style={{padding: '10px', margin:'5px'}}>
           <Grid2 container spacing={2} direction={'column'} alignItems={'center'} style={{padding: '10px'}}>
 
             <Typography variant="h6" component="div" sx={{flexGrow: 1}} color={'brown'}>
