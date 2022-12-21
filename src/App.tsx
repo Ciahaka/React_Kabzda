@@ -70,7 +70,9 @@ function App() {
       <UnControlledOnOffCallback click={isDone} onClick={(click)=>setIsDone(click)}/>
       <UncontrolledInput title={'Uncontrolled Input'} value={'Я под контролeм!'} />
       <ControlledInput title={'Controlled Input'}/>
-      <ArrayAccordion items={['Tiger','Bear','Cat','Dog']} titleValue={'Array of items to Accordion'} clickValue={'ClicK'} onChange={()=>setExpanded(!expanded)} expanded={expanded} />
+      <ArrayAccordion items={[{title:'Tiger',value:1}, {title:'Bear',value:2}, {title:'Cat',value:3}, {title:'Dog',value:4}]} titleValue={'Array of items to Accordion'} clickValue={'ClicK'} onChange={()=>setExpanded(!expanded)} expanded={expanded}
+      onClick={(value)=>{alert(`Нажали элемент ${value}`)}}
+      />
     </div>
   );
 }

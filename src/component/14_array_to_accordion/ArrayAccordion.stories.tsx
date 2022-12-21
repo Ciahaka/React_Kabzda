@@ -8,20 +8,42 @@ export default {
 }
 
 const callbackAction = action('work of accordion')
+const onClickAction = action('меня нажали')
 
-export const MenuCollapsedMode = () => <ArrayAccordion titleValue={'Я свёрнут'} clickValue={'Цисни'}
-                                                       onChange={callbackAction} expanded={true} items={[]}/>
+export const MenuCollapsedMode = () => <ArrayAccordion titleValue={'Я свёрнут'}
+                                                       clickValue={'Цисни'}
+                                                       onChange={callbackAction}
+                                                       expanded={true}
+                                                       items={[]}
+                                                       onClick={onClickAction}/>
 
-export const MenuUnCollapsedMode = () => <ArrayAccordion titleValue={'Я развёрнут'} clickValue={'Click'}
-                                                         onChange={callbackAction} expanded={false}
-                                                         items={['Tiger', 'Bear', 'Cat', 'Dog']}/>
+export const MenuUnCollapsedMode = () => <ArrayAccordion titleValue={'Я развёрнут'}
+                                                         clickValue={'Click'}
+                                                         onChange={callbackAction}
+                                                         expanded={false}
+                                                         items={[
+                                                           {title: 'Tiger', value: 1},
+                                                           {title: 'Bear', value: 2},
+                                                           {title: 'Cat', value: 3},
+                                                           {title: 'Dog', value: 4}
+                                                         ]}
+                                                         onClick={onClickAction}
+/>
 
 export const MenuChangeMode = () => {
   let [expanded, setExpanded] = useState<boolean>(true)
   return (
-    <ArrayAccordion titleValue={'Я стейт'} clickValue={'Click'}
+    <ArrayAccordion titleValue={'Я стейт'}
+                    clickValue={'Click'}
                     onChange={() => setExpanded(!expanded)} expanded={expanded}
-                    items={['Tiger', 'Bear', 'Cat', 'Dog']}/>
+                    items={[
+                      {title: 'Tiger', value: 1},
+                      {title: 'Bear', value: 2},
+                      {title: 'Cat', value: 3},
+                      {title: 'Dog', value: 4}
+                    ]}
+                    onClick={(value)=>{alert(`Нажали элемент с id ${value}`)}}
+    />
   )
 }
 

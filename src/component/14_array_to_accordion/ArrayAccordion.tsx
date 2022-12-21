@@ -9,12 +9,17 @@ import Grid2 from '@mui/material/Unstable_Grid2';
 
 
 
+export type ItemsType={
+  title:string
+  value:any
+}
 export type PropsAccordionType = {
   titleValue: string
   expanded: boolean
   onChange: () => void
   clickValue: string
-  items:string[]
+  items:ItemsType[]
+  onClick:(value:any)=>void
 }
 
 export const ArrayAccordion = (props: PropsAccordionType) => {
@@ -32,7 +37,7 @@ export const ArrayAccordion = (props: PropsAccordionType) => {
               <AccordionTitle titleValue={props.clickValue}
                               onChange={props.onChange}
               />
-              {!props.expanded && <AccordionBody items={props.items}/>}
+              {!props.expanded && <AccordionBody items={props.items} onClick={props.onClick}/>}
 
           </Grid2>
         </Paper>
@@ -57,12 +62,13 @@ export const AccordionTitle = (props: PropsAccordionTitle) => {
 }
 
 export type PropsBodyType = {
-  items:string[]
+  items:ItemsType[]
+  onClick:(value:any)=>void
 }
 export const AccordionBody = (props:PropsBodyType) => {
   return (
       <List>
-        {props.items.map((i,index)=><ListItem key={index}>{i}</ListItem>)}
+        {props.items.map((i,index)=><ListItem key={index} onClick={()=>{props.onClick(i.value)}}>{i.title}</ListItem>)}
       </List>
   );
 }
