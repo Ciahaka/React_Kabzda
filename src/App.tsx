@@ -25,12 +25,14 @@ import {
 } from './component/08_kabzda_callback/uncontrolled on_of callback/UnControlledOnOffCallback';
 import {UncontrolledInput} from './component/12_uncontrolled_input/UncontrolledInput';
 import {ControlledInput} from './component/13_controlled_input-checkbox-select/ControlledInput';
+import {ArrayAccordion} from './component/14_array_to_accordion/ArrayAccordion';
 
 function App() {
 
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
   let [collapsed,setCollapsed] = useState<boolean>(false)
   let [isDone,setIsDone] = useState<onClickType>(true)
+  let [expanded,setExpanded] = useState<boolean>(true)
 
   return (
     <div className={'App'}>
@@ -68,6 +70,7 @@ function App() {
       <UnControlledOnOffCallback click={isDone} onClick={(click)=>setIsDone(click)}/>
       <UncontrolledInput title={'Uncontrolled Input'} value={'Я под контролeм!'} />
       <ControlledInput title={'Controlled Input'}/>
+      <ArrayAccordion items={['Tiger','Bear','Cat','Dog']} titleValue={'Array of items to Accordion'} clickValue={'ClicK'} onChange={()=>setExpanded(!expanded)} expanded={expanded} />
     </div>
   );
 }
