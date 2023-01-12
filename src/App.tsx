@@ -26,13 +26,14 @@ import {
 import {UncontrolledInput} from './component/12_uncontrolled_input/UncontrolledInput';
 import {ControlledInput} from './component/13_controlled_input-checkbox-select/ControlledInput';
 import {ArrayAccordion} from './component/14_array_to_accordion/ArrayAccordion';
+import {SelectComponent} from './component/15_select_component/SelectComponent';
 
 function App() {
 
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
-  let [collapsed,setCollapsed] = useState<boolean>(false)
-  let [isDone,setIsDone] = useState<onClickType>(true)
-  let [expanded,setExpanded] = useState<boolean>(true)
+  let [collapsed, setCollapsed] = useState<boolean>(false)
+  let [isDone, setIsDone] = useState<onClickType>(true)
+  let [expanded, setExpanded] = useState<boolean>(true)
 
   return (
     <div className={'App'}>
@@ -50,11 +51,12 @@ function App() {
       <Rating value={2}/>
       <Rating value={3}/>
       <Rating value={4}/>
-      <OnOf_1 isDone={true} />
-      <OnOf_1 isDone={true} />
-      <OnOf isDone={true} />
-      <OnOf isDone={false} />
-      <ClickUse onChange={setIsDone} /> <div className={s.img}>{isDone.toString()}</div>
+      <OnOf_1 isDone={true}/>
+      <OnOf_1 isDone={true}/>
+      <OnOf isDone={true}/>
+      <OnOf isDone={false}/>
+      <ClickUse onChange={setIsDone}/>
+      <div className={s.img}>{isDone.toString()}</div>
       <UnControlledAccordion title={'I am very hungry!'}/>
       <UnControlledRating/>
       <UnControlledRating/>
@@ -66,13 +68,33 @@ function App() {
       <CallbackAccordion title={'Callback'}/>
       <CallbackControlledRating value={ratingValue} onClick={setRatingValue}/>
       <CallbackUnControlledRating/>
-      <CallbackUnControlledAccordion title={'Я неуправляемый баян из ада!'} pip={'Жми сюда!--> 0'} collapsed={collapsed} onChange={()=>setCollapsed(!collapsed)}/>
-      <UnControlledOnOffCallback click={isDone} onClick={(click)=>setIsDone(click)}/>
-      <UncontrolledInput title={'Uncontrolled Input'} value={'Я под контролeм!'} />
+      <CallbackUnControlledAccordion title={'Я неуправляемый баян из ада!'}
+                                     pip={'Жми сюда!--> 0'}
+                                     collapsed={collapsed}
+                                     onChange={() => setCollapsed(!collapsed)}/>
+      <UnControlledOnOffCallback click={isDone} onClick={(click) => setIsDone(click)}/>
+      <UncontrolledInput title={'Uncontrolled Input'} value={'Я под контролeм!'}/>
       <ControlledInput title={'Controlled Input'}/>
-      <ArrayAccordion items={[{title:'Tiger',value:1}, {title:'Bear',value:2}, {title:'Cat',value:3}, {title:'Dog',value:4}]} titleValue={'Array of items to Accordion'} clickValue={'ClicK'} onChange={()=>setExpanded(!expanded)} expanded={expanded}
-      onClick={(value)=>{alert(`Нажали элемент ${value}`)}}
+      <ArrayAccordion items={[
+        {title: 'Tiger', value: 1},
+        {title: 'Bear', value: 2},
+        {title: 'Cat', value: 3},
+        {title: 'Dog', value: 4}
+      ]}
+                      titleValue={'Array of items to Accordion'}
+                      clickValue={'ClicK'}
+                      onChange={() => setExpanded(!expanded)}
+                      expanded={expanded}
+                      onClick={(value) => {
+                        alert(`Нажали элемент ${value}`)
+                      }}
       />
+      <SelectComponent value={'1'} onChange={()=>{alert('HO-HO-HO')}} items={[
+        {value:'1', title:'Minsk'},
+        {value:'2', title:'Kiev'},
+        {value:'3', title:'Moscow'},
+      ]}/>
+
     </div>
   );
 }
