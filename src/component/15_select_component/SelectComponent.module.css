@@ -1,8 +1,8 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
     margin: 0 auto;
     background-color: wheat;
     max-width: 400px;
@@ -12,16 +12,30 @@
 }
 
 .select {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    margin: 0 auto;
     border: 1px solid gray;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: white;
+
 }
 
+
 .items {
+    display:none;
+    /*flex-direction: column;*/
+    /*align-items: center;*/
     border: 1px solid rebeccapurple;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: absolute;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+/**
+если у селекта будет ещё клас актив, то примени для айтемс это правило
+ */
+.select.active .items{
+    display: block;
 }

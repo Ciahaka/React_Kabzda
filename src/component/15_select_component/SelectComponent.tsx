@@ -21,7 +21,7 @@ export const SelectComponent = (props: SelectPropsType) => {
         <option value="2">Paris</option>
         <option value="3">New York</option>
       </select>
-      <div className={s.select}>
+      <div className={s.select + " " + s.active}>
         <h4>{selectedItem && selectedItem.title}</h4>
         <div className={s.items}>
           {props.items.map(i => <div key={i.value}>{i.title}</div>)}
