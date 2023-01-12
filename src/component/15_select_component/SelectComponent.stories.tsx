@@ -8,11 +8,20 @@ export default {
   component: SelectComponent,
 }
 
-export const SelectBase = () => <SelectComponent onChange={action('Значение изменилось')}
-                                                 value={'1'}
-                                                 items={[
-                                                   {value:'1', title:'Minsk'},
-                                                   {value:'2', title:'Kiev'},
-                                                   {value:'3', title:'Moscow'},
-                                                 ]}
+export const WithValue = () => <SelectComponent onChange={action('Value - Kiev')}
+                                                value={'2'}
+                                                items={[
+                                                  {value: '1', title: 'Minsk'},
+                                                  {value: '2', title: 'Kiev'},
+                                                  {value: '3', title: 'Moscow'},
+                                                ]}
 />
+
+export const WithOutValue = () => <SelectComponent onChange={action('No Value')}
+                                                   items={[
+                                                     {value: '1', title: 'Minsk'},
+                                                     {value: '2', title: 'Kiev'},
+                                                     {value: '3', title: 'Moscow'},
+                                                   ]}
+/>
+

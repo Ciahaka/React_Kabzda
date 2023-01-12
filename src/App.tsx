@@ -89,7 +89,7 @@ function App() {
                         alert(`Нажали элемент ${value}`)
                       }}
       />
-      <SelectComponent value={'1'} onChange={()=>{alert('HO-HO-HO')}} items={[
+      <SelectComponent value={'2'} onChange={()=>{alert('HO-HO-HO')}} items={[
         {value:'1', title:'Minsk'},
         {value:'2', title:'Kiev'},
         {value:'3', title:'Moscow'},
