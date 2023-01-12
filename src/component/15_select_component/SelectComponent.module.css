@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: wheat;
+    max-width: 400px;
+    border: 1px solid grey;
+    border-radius: 7px;
+
+}
+
+.select {
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.items {
+    border: 1px solid rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
