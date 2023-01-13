@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, KeyboardEvent, useEffect} from 'react';
 import s from './SelectComponent.module.css'
 
 
@@ -14,14 +14,40 @@ type SelectPropsType = {
 }
 
 export const SelectComponent = (props: SelectPropsType) => {
+
   const [active, setActive] = useState(false)
   const [hoverValue, setHoverValue] = useState(props.value)
-  const toggleItems = () => setActive(!active)
+
   const selectedItem = props.items.find(i => i.value === props.value)
   const selectedHover = props.items.find(i => i.value === hoverValue)
+
+  useEffect(() => {
+    setHoverValue(props.value)
+  }, [props.value])
+
+  const toggleItems = () => setActive(!active)
+
   const onClickHandler = (value: any) => {
     props.onChange(value);
     toggleItems()
+  }
+
+  const onKeyDownHandler = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      for (let i = 0; i < props.items.length; i++) {
+        if (props.items[i].value === hoverValue) {
+          const challengerElement = e.key === 'ArrowDown'
+            ? props.items[i + 1]
+            : props.items[i - 1]
+          if (challengerElement) {
+            // setHoverValue(props.items[i + 1].value)
+            props.onChange(challengerElement.value)
+            break;
+          }
+        }
+      }
+    }
+
   }
   return (
     <>
@@ -32,13 +58,15 @@ export const SelectComponent = (props: SelectPropsType) => {
           <option value="3">New York</option>
         </select>
       </div>
-      <div className={s.customSelect}>
+      <div className={s.customSelect} onKeyDown={onKeyDownHandler} tabIndex={0}>
         <span className={s.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
         {
           active &&
             <div>
               {props.items.map(i => <div key={i.value}
-                                         onMouseEnter={()=>{setHoverValue(i.value)}}
+                                         onMouseEnter={() => {
+                                           setHoverValue(i.value)
+                                         }}
                                          className={s.item + ' ' + (selectedHover === i ? s.selected : '')}
                                          onClick={() => {
                                            onClickHandler(i.value)
