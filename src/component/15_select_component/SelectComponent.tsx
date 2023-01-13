@@ -42,10 +42,16 @@ export const SelectComponent = (props: SelectPropsType) => {
           if (challengerElement) {
             // setHoverValue(props.items[i + 1].value)
             props.onChange(challengerElement.value)
-            break;
+            return;
           }
         }
       }
+      if(!selectedItem){
+        props.onChange(props.items[0].value)
+      }
+    }
+    if (e.key === 'Enter' || e.key === 'Escape') {
+      setActive(false)
     }
 
   }
