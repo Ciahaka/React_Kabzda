@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './SelectComponent.module.css'
 
 type itemType = {
@@ -13,23 +13,32 @@ type SelectPropsType = {
 }
 
 export const SelectComponent = (props: SelectPropsType) => {
+  const [active, setActive] = useState(false)
+  const showSelect = () => {
+    setActive(!active)
+
+  }
   const selectedItem = props.items.find(i => i.value === props.value)
   return (
-    <div className={s.container}>
-      <select name="Select a city">
-        <option value="1">London</option>
-        <option value="2">Paris</option>
-        <option value="3">New York</option>
-      </select>
-      <div className={s.select + " " + s.active}>
-        <h4>{selectedItem && selectedItem.title}</h4>
-        <div className={s.items}>
+    <>
+      <div className={s.container}>
+        <select name="Select a city">
+          <option value="1">London</option>
+          <option value="2">Paris</option>
+          <option value="3">New York</option>
+        </select>
+      </div>
+      <div className={s.customSelect}>
+        <h4 onClick={showSelect}>{selectedItem && selectedItem.title}</h4>
+        {
+          active &&
+          <div>
           {props.items.map(i => <div key={i.value}>{i.title}</div>)}
         </div>
+        }
       </div>
 
-
-    </div>
+    </>
   );
 };
 
