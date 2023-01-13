@@ -8,9 +8,14 @@
     max-width: 400px;
     border: 1px solid red;
     border-radius: 7px;
+    min-width: 100px;
+    min-height: 20px;
 }
-.customSelect{
-    display:flex;
+
+
+
+.customSelect {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -19,6 +24,12 @@
     max-width: 400px;
     border: 1px solid red;
     border-radius: 7px;
+}
+.main {
+    border: 1px solid red;
+    display: inline;
+    min-width: 100px;
+    min-height: 20px;
 }
 .items {
     display: none;
@@ -29,6 +40,12 @@
     margin: 0 auto;
     border: 1px solid red;
 }
+.item.selected{
+    background-color: #1f1fff;
+    color: white;
+}
+
+
 
 /*!***/
 /*если у селекта будет ещё клас актив, то примени для айтемс это правило*/

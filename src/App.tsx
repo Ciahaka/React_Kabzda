@@ -34,6 +34,7 @@ function App() {
   let [collapsed, setCollapsed] = useState<boolean>(false)
   let [isDone, setIsDone] = useState<onClickType>(true)
   let [expanded, setExpanded] = useState<boolean>(true)
+  const [value,setValue]= useState('2')
 
   return (
     <div className={'App'}>
@@ -89,7 +90,7 @@ function App() {
                         alert(`Нажали элемент ${value}`)
                       }}
       />
-      <SelectComponent value={'2'} onChange={()=>{alert('HO-HO-HO')}} items={[
+      <SelectComponent value={value} onChange={setValue} items={[
         {value:'1', title:'Minsk'},
         {value:'2', title:'Kiev'},
         {value:'3', title:'Moscow'},

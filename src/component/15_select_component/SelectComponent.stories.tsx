@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {action} from '@storybook/addon-actions';
 import {SelectComponent} from './SelectComponent';
 
@@ -8,20 +8,27 @@ export default {
   component: SelectComponent,
 }
 
-export const WithValue = () => <SelectComponent onChange={action('Value - Kiev')}
-                                                value={'2'}
-                                                items={[
-                                                  {value: '1', title: 'Minsk'},
-                                                  {value: '2', title: 'Kiev'},
-                                                  {value: '3', title: 'Moscow'},
-                                                ]}
-/>
+export const WithValue = () => {
+  const [value, setValue] = useState('2')
+  return <SelectComponent onChange={setValue}
+                          value={value}
+                          items={[
+                            {value: '1', title: 'Minsk'},
+                            {value: '2', title: 'Kiev'},
+                            {value: '3', title: 'Moscow'},
+                          ]}
+  />
+}
 
-export const WithOutValue = () => <SelectComponent onChange={action('No Value')}
-                                                   items={[
-                                                     {value: '1', title: 'Minsk'},
-                                                     {value: '2', title: 'Kiev'},
-                                                     {value: '3', title: 'Moscow'},
-                                                   ]}
-/>
+export const WithOutValue = () => {
+  const [value, setValue] = useState(null)
+  return <SelectComponent onChange={setValue}
+                          value={value}
+                          items={[
+                            {value: '1', title: 'Minsk'},
+                            {value: '2', title: 'Kiev'},
+                            {value: '3', title: 'Moscow'},
+                          ]}
+  />
+}
 
