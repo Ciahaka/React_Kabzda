@@ -8,7 +8,7 @@ export type ReducerTypeAction = {
 
 function AccordionForUseReducer  (props: AccordionTypeProps) {
   //let [collapsed, setCollapsed] = useState(true)
-  let [collapsed, dispatch] = useReducer(reducer, false)
+  let [state, dispatch] = useReducer(reducer, {collapsed:false})
 
   return (
     <div className={s.container}>
@@ -21,7 +21,7 @@ function AccordionForUseReducer  (props: AccordionTypeProps) {
         dispatch({type: SET_CONST})
       }}>Достаточно!
       </button>
-      {!collapsed && <AccordionBody/>}
+      {state.collapsed && <AccordionBody/>}
     </div>
   );
 
