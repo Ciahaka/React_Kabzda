@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+
+}
+
+.title {
+    border: 1px solid;
+    border-radius: 15px;
+    box-shadow: -3px 3px 8px grey ;
+    color: aliceblue;
+    background-color: #88ef2f;
+}
+
+.body{
+    list-style: none;
+}
+.on {
+    background-color: #4CAF50; /* Green */
+    /*border: 1px solid;*/
+    color: black;
+    padding: 2px 15px;
+    margin: 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 10%;
+
+}
+.of {
+    background-color: red;
+    /*border: 1px solid;*/
+    color: black;
+    padding: 2px 15px;
+    margin: 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 10%;
+
+}

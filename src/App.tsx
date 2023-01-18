@@ -27,6 +27,7 @@ import {UncontrolledInput} from './component/12_uncontrolled_input/UncontrolledI
 import {ControlledInput} from './component/13_controlled_input-checkbox-select/ControlledInput';
 import {ArrayAccordion} from './component/14_array_to_accordion/ArrayAccordion';
 import {SelectComponent} from './component/15_select_component/SelectComponent';
+import AccordionForUseReducer from './component/16_useReducer/UseReducer';
 
 function App() {
 
@@ -95,6 +96,7 @@ function App() {
         {value:'2', title:'Kiev'},
         {value:'3', title:'Moscow'},
       ]}/>
+      <AccordionForUseReducer title={'Посчитай до четырёх'}/>
 
     </div>
   );
