@@ -3,7 +3,7 @@ import {ReducerTypeAction} from './UseReducer';
 export type AccordionTypeProps = {
   title: string
 }
-type StateType = {
+export type StateType = {
   collapsed: boolean
 }
 export const SET_CONST = 'SET-СOLLAPSED'
